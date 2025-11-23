@@ -59,11 +59,9 @@ routes.get('/getOneReport/:reportId' ,async (req,res)=>{
 routes.get('/getUserReports', checkToken.checkToken, async (req, res) => {
     try {
       const userEmail = req.decoded.email;
-  
       if (!userEmail) {
         return res.status(400).json({ message: "Invalid token or email not found." });
       }
-  
       const userReports = await Report.find({ email: userEmail });
   
       res.json(userReports); // ✅ return array only
@@ -72,11 +70,8 @@ routes.get('/getUserReports', checkToken.checkToken, async (req, res) => {
       res.status(500).json({ message: "Failed to fetch user reports" });
     }
   });
-  
-
 //search specific report
 routes.get('/searchReport/:key' , async (req,res)=>{
-
     const report = await Report.find(
         {
             "$or":[

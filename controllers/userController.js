@@ -8,12 +8,7 @@ const checkToken = require('../utils/checkToken');
 
 const User = require('../models/user');
 const Token = require('../models/token');
-
-
-
 const routes = express.Router();
-
-
 //signup route
 routes.post('/signup' , async (req,res)=>{
   console.log("🚀 Signup route hit!");
@@ -168,9 +163,7 @@ routes.get('/getOneProfil', checkToken.checkToken, async (req, res) => {
       throw new Error('User email not found in token');
     }
   }
-  
   const currentUserEmail = getEmailFromToken(req);
-
   const user = await User.find({ email: currentUserEmail }, {
     _id: 0,
         userId: '$_id',
@@ -180,7 +173,6 @@ routes.get('/getOneProfil', checkToken.checkToken, async (req, res) => {
         createdAt:1,
         updatedAt:1,
   });
-
   res.json(user);
 });
 
