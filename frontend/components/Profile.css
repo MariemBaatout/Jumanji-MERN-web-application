@@ -1,0 +1,63 @@
+/* Circular profile container */
+  .profile-container {
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Profile details */
+  .profile-card p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Center the title */
+  .profile-container h2 {
+    color: #2d6a4f;
+    margin-bottom: 20px;
+  }
+  
+  /* Center and stack buttons */
+  .profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  
+  .update-btn,
+  .delete-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+  }
+  
+  .update-btn:hover,
+  .delete-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .update-btn {
+    background-color: #38a169;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #e53e3e;
+    color: white;
+  }
+  
